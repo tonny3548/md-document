@@ -1,0 +1,27 @@
+<h1>测试组件</h1>
+<h2>二级标题1</h2>
+<p><img src="https://www.zhaodaoshi.com/imgs/ans1_img.svg" alt="demo1"></p>
+<pre><code class="language-vue">&lt;template&gt;
+    &lt;h2 style=&quot;color:pink;&quot;&gt;Demo1&lt;/h2&gt;
+&lt;/template&gt;
+</code></pre>
+<h2>二级标题2</h2>
+<p><img src="https://www.zhaodaoshi.com/imgs/ans1_img.svg" alt="demo2"></p>
+<pre><code class="language-vue">&lt;template&gt;
+    &lt;h2&gt;Demo2:{{ msg }}&lt;/h2&gt;
+    &lt;button @click=&quot;test&quot;&gt;测试按钮&lt;/button&gt;
+&lt;/template&gt;
+
+&lt;script setup lang=&quot;ts&quot;&gt;
+defineProps&lt;{
+    msg?:string;
+}&gt;()
+function test() {
+    alert(&#39;测试按钮123&#39;)
+}
+&lt;/script&gt;
+</code></pre>
+<h2>二级标题3</h2>
+<p><img src="https://www.zhaodaoshi.com/imgs/ans1_img.svg" alt="demo3"></p>
+<pre><code class="language-vue">&lt;template&gt;123&lt;/template&gt;
+</code></pre>
