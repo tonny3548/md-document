@@ -15,7 +15,7 @@ const props = defineProps<{
     document: string;
 }>();
 const mk:ComputedRef<MdDocuemntDefineType> = computed(() => {
-    return __MK_DOCUMENT_HTML__[props.document] || null;
+    return __MD_DOCUMENT_HTML__[props.document] || null;
 })
 const isRender = ref(false);
 const html: Ref<HTMLSpanElement | null> = ref(null);

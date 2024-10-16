@@ -1,12 +1,74 @@
-<h1>测试组件</h1>
-<h2>二级标题1</h2>
-<p><img src="https://www.zhaodaoshi.com/imgs/ans1_img.svg" alt="demo1"></p>
-<p><code>vue:demo1</code></p>
-<p>这是一些文本内容</p>
-<p>换行了</p>
-<h2>二级标题2</h2>
-<p><img src="https://www.zhaodaoshi.com/imgs/ans1_img.svg" alt="demo2"></p>
-<p><code>vue:demo2</code></p>
+<h1>Markdown文档生成器</h1>
+<h2>基本介绍</h2>
+<p>您是否遇到过想要封装一个公共组件库（如<code>element-ui</code>）,为了能让使用者通俗易懂，还得专门写一个文档的可交互页面来介绍您的组件库。为了这个页面还得不断的去复制与粘贴您的示例代码作为文档的代码参照，并且还需要讲说明部分粘贴或保存到数据库中。</p>
+<p>使用文档生成器可以帮您大大的节省这些步骤：</p>
+<ul>
+<li><p>这是一个自动生成文档的工具</p>
+</li>
+<li><p>可以融合<code>Markdown</code>文档与<code>vue</code>组件快速生成html文档</p>
+</li>
+<li><p>可以实现边开发，边测，边自动生成文档，文档的说明部分可以在<code>Markdown</code>中书写，文档的组件举例与渲染部分专注在演示组件中开发与调试</p>
+</li>
+<li><p>文档导出一个<code>vite</code>插件与<code>vue3.x</code>的组件</p>
+</li>
+</ul>
+<h2>怎么使用</h2>
+<p><em>vite.config.ts</em></p>
+<pre><code class="language-typescript">import { defineConfig } from &#39;vite&#39;
+import MdDoc from &quot;md-document&quot;;
+
+export default defineConfig({
+  plugins: [
+    // 其它插件
+    // md生成器插件
+    MdDoc({
+      md: {
+        target: &quot;./README.md&quot;,
+        includes: [&quot;./docs/*.md&quot;]
+      },
+      code: {
+        includes: [&quot;./src/view/demo/*&quot;]
+      }
+    })
+  ]
+})
+</code></pre>
+<p><em>文档主组件Document.vue</em></p>
+<pre><code class="language-typescript">&lt;template&gt;
+    &lt;MdDocument class=&quot;md-document&quot; document=&quot;demo&quot;&gt;
+        &lt;Teleport to=&quot;#demo1&quot;&gt;
+            &lt;Demo1 /&gt;
+        &lt;/Teleport&gt;
+        &lt;Teleport to=&quot;#demo2&quot;&gt;
+            &lt;Demo2 msg=&quot;hello world&quot; /&gt;
+        &lt;/Teleport&gt;
+    &lt;/MdDocument&gt;
+&lt;/template&gt;
+
+&lt;script setup lang=&quot;ts&quot;&gt;
+import MdDocument from &quot;@/components/Document.vue&quot;;
+import &quot;./styles/github.scss&quot;;
+import Demo1 from &quot;@/views/demo/Demo1.vue&quot;;
+import Demo2 from &quot;@/views/demo/Demo2.vue&quot;;
+&lt;/script&gt;
+
+&lt;style lang=&quot;scss&quot;&gt;
+.md-document {
+    width: 80%;
+    margin: auto;
+}
+@media screen and (min-width: 1027px) {
+    .md-document {
+        width: 70%;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .md-document {
+        width: 60%;
+    }
+}
+&lt;/style&gt;
+</code></pre>
 <h2>二级标题3</h2>
 <p><img src="https://www.zhaodaoshi.com/imgs/ans1_img.svg" alt="demo3"></p>
 <pre><code class="language-vue">&lt;template&gt;
