@@ -114,7 +114,9 @@ async function read(option: MdDocumentOptionType) {
                 }
             });
             // 转换为html
-            const html: string = marked(mdContent) as string;
+            let html: string = marked(mdContent) as string;
+            // 给所有标签添加属性md-doc-item
+            html = html.replace(/<([^>/]+)(\/?)>/g, ($, $1, $2) => `<${$1} md-doc-item${$2 ? " /" : $2}>`);
             // 提取标题
             const title = mdContent.match(/# (.+)/)?.[1] || "";
             // 提取文件名key进行全局存储

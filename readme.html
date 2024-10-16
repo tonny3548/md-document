@@ -1,27 +1,52 @@
 <h1>测试组件</h1>
 <h2>二级标题1</h2>
 <p><img src="https://www.zhaodaoshi.com/imgs/ans1_img.svg" alt="demo1"></p>
-<pre><code class="language-vue">&lt;template&gt;
-    &lt;h2 style=&quot;color:pink;&quot;&gt;Demo1&lt;/h2&gt;
-&lt;/template&gt;
-</code></pre>
+<p><code>vue:demo1</code></p>
+<p>这是一些文本内容</p>
+<p>换行了</p>
 <h2>二级标题2</h2>
 <p><img src="https://www.zhaodaoshi.com/imgs/ans1_img.svg" alt="demo2"></p>
+<p><code>vue:demo2</code></p>
+<h2>二级标题3</h2>
+<p><img src="https://www.zhaodaoshi.com/imgs/ans1_img.svg" alt="demo3"></p>
 <pre><code class="language-vue">&lt;template&gt;
-    &lt;h2&gt;Demo2:{{ msg }}&lt;/h2&gt;
-    &lt;button @click=&quot;test&quot;&gt;测试按钮&lt;/button&gt;
+    &lt;div class=&quot;demo&quot;&gt;
+        &lt;h1&gt;{{ msg }}&lt;/h1&gt;
+    &lt;/div&gt;
 &lt;/template&gt;
 
 &lt;script setup lang=&quot;ts&quot;&gt;
-defineProps&lt;{
-    msg?:string;
-}&gt;()
-function test() {
-    alert(&#39;测试按钮123&#39;)
-}
+defineProps&lt;{ msg: string }&gt;({});
 &lt;/script&gt;
 </code></pre>
-<h2>二级标题3</h2>
-<p><img src="https://www.zhaodaoshi.com/imgs/ans1_img.svg" alt="demo3"></p>
-<pre><code class="language-vue">&lt;template&gt;123&lt;/template&gt;
-</code></pre>
+<h3>表格</h3>
+<blockquote>
+<p>引用1</p>
+<p>引用2</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>标题1</th>
+<th>标题2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>test</td>
+<td>Test<a href="www.kooci.net">链接</a></td>
+</tr>
+<tr>
+<td>test2</td>
+<td>test2v</td>
+</tr>
+</tbody></table>
+<h4>有序序号</h4>
+<ol>
+<li>持续健康</li>
+<li>倒计时开发</li>
+</ol>
+<h5>无需序号</h5>
+<ul>
+<li>多数据库</li>
+<li>倒计时卡</li>
+</ul>

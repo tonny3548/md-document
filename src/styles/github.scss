@@ -1,0 +1,254 @@
+$border-color: #dedede;
+$border-color--dark: #393939;
+
+$bg-color: #f3f4f4;
+$bg-color--dark: #313131;
+
+.md-doc {
+    a[md-doc-item].url {
+        word-break: break-all;
+    }
+    a[md-doc-item]:active,
+    a[md-doc-item]:hover {
+        outline: 0px;
+    }
+    img[md-doc-item] {
+        max-width: 100%;
+        vertical-align: middle;
+        image-orientation: from-image;
+    }
+    button[md-doc-item],
+    input[md-doc-item],
+    select[md-doc-item],
+    textarea[md-doc-item] {
+        color: inherit;
+        font-style: inherit;
+        font-variant-caps: inherit;
+        font-weight: inherit;
+        font-stretch: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        font-family: inherit;
+        font-size-adjust: inherit;
+        font-kerning: inherit;
+        font-variant-alternates: inherit;
+        font-variant-ligatures: inherit;
+        font-variant-numeric: inherit;
+        font-variant-east-asian: inherit;
+        font-variant-position: inherit;
+        font-variant-emoji: inherit;
+        font-feature-settings: inherit;
+        font-optical-sizing: inherit;
+        font-variation-settings: inherit;
+    }
+    input[md-doc-item][type="checkbox"],
+    input[md-doc-item][type="radio"] {
+        line-height: normal;
+        padding: 0px;
+    }
+    *,
+    ::after,
+    ::before {
+        box-sizing: border-box;
+    }
+    pre[md-doc-item] {
+        white-space: pre-wrap;
+    }
+    p[md-doc-item],
+    blockquote[md-doc-item],
+    ul[md-doc-item],
+    ol[md-doc-item],
+    dl[md-doc-item],
+    table[md-doc-item] {
+        margin: 0.8em 0;
+    }
+    p[md-doc-item] {
+        orphans: 4;
+        line-height: inherit;
+    }
+    h1[md-doc-item],
+    h2[md-doc-item],
+    h3[md-doc-item],
+    h4[md-doc-item],
+    h5[md-doc-item],
+    h6[md-doc-item],
+    p[md-doc-item] {
+        position: relative;
+    }
+    h1[md-doc-item],
+    h2[md-doc-item],
+    h3[md-doc-item],
+    h4[md-doc-item],
+    h5[md-doc-item],
+    h6[md-doc-item] {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        line-height: 1.4;
+        cursor: text;
+        break-after: avoid-page;
+        break-inside: avoid;
+        orphans: 4;
+    }
+    h1[md-doc-item] {
+        font-size: 2.25em;
+        line-height: 1.2;
+        border-bottom: 1px solid $border-color;
+    }
+    h2[md-doc-item] {
+        font-size: 1.75em;
+        line-height: 1.225;
+        border-bottom: 1px solid $border-color;
+    }
+    h3[md-doc-item] {
+        font-size: 1.5em;
+        line-height: 1.43;
+    }
+    h4[md-doc-item] {
+        font-size: 1.25em;
+    }
+    h5[md-doc-item] {
+        font-size: 1em;
+    }
+    blockquote[md-doc-item] {
+        border-left: 4px solid $border-color;
+        padding: 0 15px;
+        color: #777777;
+    }
+    code[md-doc-item],
+    tt[md-doc-item] {
+        border: 1px solid $border-color;
+        background-color: $bg-color;
+        border-radius: 3px;
+        padding: 0;
+        padding: 2px 4px 0px 4px;
+        font-size: 0.9em;
+    }
+    code[md-doc-item] {
+        border: 1px solid $bg-color;
+        background-color: $bg-color;
+        padding: 2px;
+    }
+    pre[md-doc-item] {
+        background-color: $bg-color;
+        padding: 20px;
+        border: 1px solid $border-color;
+        border-radius: 4px;
+        code {
+            border: none;
+        }
+    }
+    p[md-doc-item] > img:only-child {
+        display: block;
+        margin: auto;
+    }
+    table[md-doc-item] {
+        border-collapse: collapse;
+        border-spacing: 0px;
+        width: 100%;
+        overflow: auto;
+        break-inside: auto;
+        text-align: left;
+        padding: 0;
+        word-break: initial;
+        thead {
+            display: table-header-group;
+        }
+        tr {
+            border: 1px solid $border-color;
+            margin: 0;
+            padding: 0;
+            break-inside: avoid;
+            break-after: auto;
+            th {
+                border-bottom-width: 0px;
+                border-bottom-style: none;
+                border-bottom-color: currentcolor;
+            }
+        }
+        th {
+            font-weight: bold;
+            border: 1px solid $border-color;
+            border-bottom: 0;
+            margin: 0;
+            padding: 6px 13px;
+        }
+        th:first-child,
+        td:first-child {
+            margin-top: 0;
+        }
+        tr:nth-child(2n),
+        thead {
+            background-color: $bg-color;
+        }
+        td {
+            border: 1px solid $border-color;
+            margin: 0;
+            padding: 6px 13px;
+        }
+    }
+    a[md-doc-item] {
+        color: #4183c4;
+    }
+
+    // 有序列表
+    ul[md-doc-item],
+    ol[md-doc-item] {
+        padding-left: 30px;
+    }
+    li[md-doc-item] {
+        margin: 0px;
+        position: relative;
+    }
+    ul[md-doc-item]:last-child,
+    ol[md-doc-item]:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .md-doc {
+        code[md-doc-item],
+        tt[md-doc-item] {
+            border: 1px solid $border-color--dark;
+            background-color: $bg-color--dark;
+            border-radius: 3px;
+            padding: 0;
+            padding: 2px 4px 0px 4px;
+            font-size: 0.9em;
+        }
+        pre[md-doc-item] {
+            background-color: $bg-color--dark;
+            padding: 20px;
+            border: 1px solid $border-color--dark;
+            code {
+                border: none;
+                background-color: transparent;
+            }
+        }
+        table[md-doc-item] {
+            tr:nth-child(2n),
+            thead {
+                background-color: $bg-color--dark;
+            }
+            th {
+                border: 1px solid $border-color--dark;
+            }
+            tr {
+                border: 1px solid $border-color--dark;
+            }
+            td {
+                border: 1px solid $border-color--dark;
+            }
+        }
+        h1[md-doc-item] {
+            border-bottom: 1px solid $border-color--dark;
+        }
+        h2[md-doc-item] {
+            border-bottom: 1px solid $border-color--dark;
+        }
+        blockquote[md-doc-item] {
+            border-left: 4px solid $border-color--dark;
+        }
+    }
+}

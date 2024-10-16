@@ -1,6 +1,6 @@
 <template>
-    <div class="mk-doc">
-        <span class="mk-doc__html" v-if="mk?.html" v-html="mk.html" ref="html"></span>
+    <div class="md-doc">
+        <span class="md-doc__html" v-if="mk?.html" v-html="mk.html" ref="html"></span>
         <template v-if="isRender">
             <slot></slot>
         </template>
